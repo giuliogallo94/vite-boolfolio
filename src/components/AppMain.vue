@@ -19,8 +19,11 @@ export default {
 </script>
 
 <template>
-  <h3>AppMain</h3>
-  <AppProjectCard />
+  <div class="row mt-5">
+    <div class="col-4" v-for="project in projects" :key="project.id">
+      <AppProjectCard :project="project" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
