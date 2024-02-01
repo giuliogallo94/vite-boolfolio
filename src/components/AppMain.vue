@@ -9,7 +9,7 @@ export default {
   },
   created() {
     axios.get(`${this.baseUrl}/api/projects`).then((resp) => {
-      console.log(resp.data.result);
+      this.projects = resp.data.results;
     });
   },
 };
