@@ -1,4 +1,5 @@
 <script>
+import AppDetailsCard from "./AppDetailsProject.vue";
 export default {
   props: {
     project: Object,
@@ -9,16 +10,21 @@ export default {
       baseUrl: "http://127.0.0.1:8000/",
     };
   },
+  components: { AppDetailsCard },
 };
 </script>
 
 <template>
-  <h2>ProjectCard</h2>
-  <div class="card">
+  <div class="card text-center mb-3">
     <div class="card-body">
-      <h4>{{ project.title }}</h4>
-      <div class="img">
+      <h5>{{ project.title }}</h5>
+      <div class="img mb-2">
         <img :src="`${baseUrl}storage/${project.project_image}`" alt="" />
+      </div>
+      <span><b>Created:</b> {{ project.date }}</span>
+      <div class="info mt-3">
+        <a href="" class="btn btn-primary"></a>
+        <router-link to="/details" class="btn btn-primary">Details</router-link>
       </div>
     </div>
   </div>
@@ -28,7 +34,8 @@ export default {
 .card {
   .img {
     img {
-      max-width: 100%;
+      aspect-ratio: 1;
+      width: 50%;
     }
   }
 }
