@@ -1,5 +1,4 @@
 <script>
-import AppDetailsCard from "../pages/AppDetailsProject.vue";
 export default {
   props: {
     project: Object,
@@ -10,7 +9,6 @@ export default {
       baseUrl: "http://127.0.0.1:8000/",
     };
   },
-  components: { AppDetailsCard },
 };
 </script>
 
@@ -23,7 +21,6 @@ export default {
       </div>
       <span><b>Created:</b> {{ project.date }}</span>
       <div class="info mt-3">
-        <a href="" class="btn btn-primary"></a>
         <router-link to="/details" class="btn btn-primary">Details</router-link>
       </div>
     </div>

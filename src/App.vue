@@ -13,7 +13,6 @@ export default {
 
 <template>
   <div class="container py-4">
-    <h1 class="text-center">App.vue</h1>
     <AppHeader />
     <router-view></router-view>
     <!-- <AppHome /> -->
