@@ -1,5 +1,5 @@
 <script>
-import AppDetailsCard from "./AppDetailsProject.vue";
+import AppDetailsCard from "../pages/AppDetailsProject.vue";
 export default {
   props: {
     project: Object,

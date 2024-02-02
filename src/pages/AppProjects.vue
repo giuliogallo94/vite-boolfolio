@@ -1,9 +1,9 @@
 <script>
 import axios from "axios";
-import AppProjectCard from "./AppProjectCard.vue";
+import AppProjectCard from "../components/AppProjectCard.vue";
 
 export default {
-  name: "AppMain",
+  name: "AppProjects",
 
   data() {
     return {
@@ -27,6 +27,7 @@ export default {
     <div class="col-4" v-for="project in projects" :key="project.id">
       <AppProjectCard :project="project" />
     </div>
+    Projects' list
   </div>
 </template>
 

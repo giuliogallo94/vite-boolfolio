@@ -1,19 +1,22 @@
 <script>
-import AppMain from "./components/AppMain.vue";
+import AppHome from "./pages/AppHome.vue";
+import AppProjects from "./pages/AppProjects.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
     return {};
   },
-  components: { AppMain },
+  components: { AppHome, AppHeader, AppProjects },
 };
 </script>
 
 <template>
   <div class="container py-4">
     <h1 class="text-center">App.vue</h1>
-    <AppMain />
+    <AppHeader />
     <router-view></router-view>
+    <!-- <AppHome /> -->
   </div>
 </template>
 

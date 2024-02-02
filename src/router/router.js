@@ -1,10 +1,28 @@
-import VueRouter from "vue-router";
-import AppDetailsProject from "../components/AppDetailsProject.vue";
+import { createRouter, createWebHistory } from "vue-router";
 
-Vue.use(VueRouter);
+import AppHome from "../pages/AppHome.vue";
+import AppProjects from "../pages/AppProjects.vue";
+import AppDetailsProject from "../pages/AppDetailsProject.vue";
 
-const routes = {
-  path: "/details",
-  name: "Details",
-  component: () => import("../components/AppDetailsProject.vue"),
-};
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: AppHome,
+    },
+    {
+      path: "/projects",
+      name: "projects",
+      component: AppProjects,
+    },
+    {
+      path: "/details",
+      name: "details-project",
+      component: AppDetailsProject,
+    },
+  ],
+});
+
+export { router };
