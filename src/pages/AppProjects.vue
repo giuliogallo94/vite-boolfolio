@@ -23,11 +23,11 @@ export default {
 </script>
 
 <template>
+  <h3 class="text-center">Projects' List</h3>
   <div class="row mt-5">
     <div class="col-4" v-for="project in projects" :key="project.id">
       <AppProjectCard :project="project" />
     </div>
-    Projects' list
   </div>
 </template>
 
