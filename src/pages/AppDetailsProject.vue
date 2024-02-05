@@ -21,12 +21,10 @@ export default {
         if (resp.data.results) {
           // console.log(resp.data.results);
           this.project = resp.data.results;
+          this.loading = false;
         } else {
           this.$router.push({ name: "not-found" });
         }
-      })
-      .finally(() => {
-        this.loading = false;
       });
   },
 };
