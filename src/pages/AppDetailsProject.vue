@@ -18,8 +18,12 @@ export default {
     axios
       .get(`${this.store.baseUrl}/api/projects/${this.$route.params.slug}`)
       .then((resp) => {
-        console.log(resp.data.results);
-        this.project = resp.data.results;
+        if (resp.data.results) {
+          // console.log(resp.data.results);
+          this.project = resp.data.results;
+        } else {
+          this.$router.push({ name: "not-found" });
+        }
       })
       .finally(() => {
         this.loading = false;
@@ -33,8 +37,8 @@ export default {
     <div v-if="loading">Loading...</div>
     <div v-else>
       <h1>{{ this.project.title }}</h1>
-
       <p><b>Creation date:</b> {{ project.date }}</p>
+      <img :src="`${store.baseUrl}/storage/${project.project_image}`" alt="" />
     </div>
   </div>
 </template>
