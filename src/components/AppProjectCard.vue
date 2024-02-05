@@ -21,7 +21,11 @@ export default {
       </div>
       <span><b>Created:</b> {{ project.date }}</span>
       <div class="info mt-3">
-        <router-link to="/details" class="btn btn-primary">Details</router-link>
+        <router-link
+          :to="{ name: 'details-project', params: { slug: project.slug } }"
+          class="btn btn-primary"
+          >Details</router-link
+        >
       </div>
     </div>
   </div>
