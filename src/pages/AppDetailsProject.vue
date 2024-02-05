@@ -7,17 +7,22 @@ export default {
     return {
       store,
       project: null,
+      loading: false,
     };
   },
 
   created() {
     // console.log(this.$route.params.slug);
+    this.loading = true;
 
     axios
       .get(`${this.store.baseUrl}/api/projects/${this.$route.params.slug}`)
       .then((resp) => {
         console.log(resp.data.results);
         this.project = resp.data.results;
+      })
+      .finally(() => {
+        this.loading = false;
       });
   },
 };
@@ -25,9 +30,12 @@ export default {
 
 <template>
   <div class="container">
-    <h1>{{ this.project.title }}</h1>
+    <div v-if="loading">Loading...</div>
+    <div v-else>
+      <h1>{{ this.project.title }}</h1>
 
-    <p><b>Creation date:</b> {{ project.date }}</p>
+      <p><b>Creation date:</b> {{ project.date }}</p>
+    </div>
   </div>
 </template>
 
